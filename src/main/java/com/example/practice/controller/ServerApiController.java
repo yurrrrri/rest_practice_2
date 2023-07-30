@@ -3,6 +3,7 @@ package com.example.practice.controller;
 import com.example.practice.dto.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -10,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class ServerApiController {
 
     @GetMapping("/hello")
-    public User hello() {
+    public User hello(@RequestParam String name, @RequestParam int age) {
         User user = new User();
-        user.setName("steve");
-        user.setAge(10);
+        user.setName(name);
+        user.setAge(age);
         return user;
     }
 
