@@ -1,5 +1,6 @@
 package com.example.practice.controller;
 
+import com.example.practice.dto.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class ServerApiController {
 
     @GetMapping("/hello")
-    public String hello() {
-        return "Hello server";
+    public User hello() {
+        User user = new User();
+        user.setName("steve");
+        user.setAge(10);
+        return user;
     }
 
 }
